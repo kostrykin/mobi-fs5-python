@@ -1,0 +1,16 @@
+name: Assign semester labels to new issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+
+      - uses: kostrykin/label-semester-issue-action@v1.0
+        with:
+          floor: ws
